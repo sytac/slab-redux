@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+
+    <title>sLab Redux - 02</title>
+    <script src="store.js"></script>
+  </head>
+
+  <body>
+    <script>
+      const store = new Store();
+
+      store.dispatch({
+        type: 'ADD',
+        item: {
+          id: 1,
+          name: 'First'
+        }
+      });
+
+      console.log(JSON.stringify(store.getState(), null, '  '));
+
+      store.dispatch({
+        type: 'ADD',
+        item: {
+          id: 2,
+          name: 'Second'
+        }
+      });
+
+      console.log(JSON.stringify(store.getState(), null, '  '));
+
+      store.dispatch({
+        type: 'REMOVE',
+        id: 1
+      });
+
+      console.log(JSON.stringify(store.getState(), null, '  '));
+    </script>
+  </body>
+</html>
